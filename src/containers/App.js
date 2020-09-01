@@ -3,7 +3,7 @@ import './App.css';
 import CardList from '../components/CardList';
 import SearchBox from '../components/SearchBox';
 import Scroll from '../components/Scroll';
-// import { robots } from './robots'
+import { robots } from '../components/robots'
 
 
 
@@ -17,9 +17,10 @@ class App extends Component{
 	}
 
 	componentDidMount(){
-		fetch('https://jsonplaceholder.typicode.com/users')
-			.then(response=> response.json())
-			.then(user=> this.setState({ robots: user}));
+		this.setState({ robots: robots});
+		// fetch('https://jsonplaceholder.typicode.com/users')
+		// 	.then(response=> response.json())
+		// 	.then(user=> this.setState({ robots: user}));
 	}
 
 	onSearchChange = (event) => {
